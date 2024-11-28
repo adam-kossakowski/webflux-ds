@@ -1,0 +1,26 @@
+server:
+  port: 8080
+spring:
+  r2dbc:
+#    url: r2dbc:postgresql://localhost:5432/filedb
+    url: ${R2DC_DATASOURCE_URL}
+    username: user
+    password: password
+  datasource:
+    driver-class-name: org.postgresql.Driver
+#    url: jdbc:postgresql://localhost:5432/filedb
+    url: ${SPRING_DATASOURCE_URL}
+    username: user
+    password: password
+  liquibase:
+    drop-first: false
+    change-log: classpath:db/changelog/db.changelog-master.xml
+    enabled: true
+  sql:
+    init:
+      mode: never
+  webflux:
+    base-path: /api
+logging:
+  level:
+    liquibase: debug

@@ -1,0 +1,13 @@
+uruchomienie:
+
+1 - W katalogu projektu uruchamiamy docker-compose za pomocą polecenia
+
+    docker-compose up --build -d
+
+2 - Następnie wykonujemy migracje liquibase poleceniem
+
+    mvn liquibase:update
+
+3 - Możemy korzystać z aplikacji dobijając się na adres
+
+http://localhost:8080/api/files/upload/many i http://localhost:8080/api/files/upload/single
